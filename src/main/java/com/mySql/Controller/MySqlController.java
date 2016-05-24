@@ -1,6 +1,7 @@
 package com.mySql.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,14 @@ public class MySqlController {
 	@RequestMapping(value = "/createDatabase")
 	public void createDatabase() {
 		dbOperation.createDb();
-		System.out.println("Created database name 'aviraldb' 2 tables student and employee with ");
-		System.out.println( "fields - (id(Auto-increment),name,age) in both and 10 rows also.");
+		System.out
+				.println("Created database name 'aviraldb' 2 tables student and employee with ");
+		System.out
+				.println("fields - (id(Auto-increment),name,age) in both and 10 rows also.");
+	}
+
+	@RequestMapping(value = "/getDataSource")
+	public JdbcTemplate template() {
+		return dbOperation.templateDB();
 	}
 }

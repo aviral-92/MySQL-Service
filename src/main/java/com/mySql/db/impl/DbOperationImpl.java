@@ -65,4 +65,9 @@ public class DbOperationImpl implements DbOperation {
 		}
 	}
 
+	@Override
+	public JdbcTemplate templateDB() {
+		return jdbcTemplate;
+	}
+
 }
